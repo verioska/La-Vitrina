@@ -84,7 +84,7 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
              <img class="imagen-mivies responsive-img" src="${data.Poster}" >
                <div class="card-content">
                  <span class="card-title activator grey-text text-darken-2"><h6>${data.Title}</h6></span>
-                 <span class="link linkHistory" data-champion=''>Informacion</span>
+                 <span class="link linkinfo" data-champion=''>Informacion</span>
                  </div>
                </div>  
              </div> 
