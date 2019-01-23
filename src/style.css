@@ -36,12 +36,8 @@ input#myInput{
     margin-right: 20px;
     text-align: center;
 }
-img.responsive-img{
-    width: 250px;
-    height: 250px;
-}
 
-#page2{
+#page2,#page3{
     display:none
 }
 
@@ -51,6 +47,19 @@ img.responsive-img{
    
     
 }
+img.responsive-img{
+    width: 150px;
+    height: 100000px;
+}
+/*img.imagen-movies.responsive-img{
+    width: 200px;
+    height: 230px;
+
+}
+div.card{
+    width: 200px;
+    height: 330px;
+}*/
 
 div#icons-media{
     margin-left: auto;
@@ -61,4 +70,9 @@ div#icons-media{
 .link{
     color: cadetblue;
     cursor: pointer;
+}
+
+img.responsive-img, img{
+    width: 250px;
+    height: 300px;
 }
