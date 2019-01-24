@@ -96,24 +96,19 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
         //   })
         document.getElementById('movies-list').innerHTML +=  `
             <div class="container">
-        
-           <div id="card-movie" class="col s12 m3" >
-           <div class="card" >
-             <img class="imagen-mivies responsive-img" style="cursor: pointer;" movie="${characters[i].id}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
-               <div class="card-content">
+              <div id="card-movie" class="col s12 m3" >
+              <div class="card" >
+               <img class="imagen-mivies responsive-img" style="cursor: pointer;" movie="${characters[i].id}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+                <div class="card-content">
                  <span class="card-title activator grey-text text-darken-2"><p>${characters[i].title}</p></span>
-                 
-                 </div>
-               </div>  
+               </div>
+              </div>  
              </div> 
-          
            </div>
         </div>
             `
           
         }
-
-        
 
 document.getElementById('page1').style.display='none';
 document.getElementById('page2').style.display='block';
@@ -154,6 +149,7 @@ document.getElementById("filter").addEventListener("change", (event)=>{
   event.preventDefault();
   document.getElementById("page3").style.display="none";
   document.getElementById('page6').style.display='none';
+  document.getElementById('page5').style.display='none';
   
   document.getElementById("movies-filter").innerHTML="";
   let genero = document.getElementById("filter").value;
@@ -168,12 +164,16 @@ document.getElementById("filter").addEventListener("change", (event)=>{
     for (let i = 0; i <gen.length; i++){
           document.getElementById("movies-filter").innerHTML += `
           <div class="container">
-           
-             <div id="movies-filter" class="col s6 m4">
-               <img class="categoria responsive-img" src=https://image.tmdb.org/t/p/w500/${gen[i].poster_path}>
-             </div>
-            </div>
-          </div>
+          <div id="mivies-filter" class="col s12 m3" >
+          <div class="card" >
+           <img class="imagen-mivies responsive-img" style="cursor: pointer;" " src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+            <div class="card-content">
+             <span class="card-title activator grey-text text-darken-2"><p>${gen[i].title}</p></span>
+           </div>
+          </div>  
+         </div> 
+       </div>
+    </div>       
  
       `
     }

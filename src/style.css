@@ -53,6 +53,9 @@ div#icons-media{
     color: cadetblue;
     cursor: pointer;
 }
+.card{
+    height: 421px;
+}
 img.responsive-img, img{
     width: 220px;
     height: 300px;
@@ -60,6 +63,9 @@ img.responsive-img, img{
 }
 h5{
    font-family:  'Titillium Web', sans-serif;
+}
+p{
+    font-size: 15px
 }
 .popular2{
     flex-direction: row;
@@ -70,3 +76,25 @@ h5{
     justify-content: center;
  
  }
+ #info-trailer{
+    border:grey solid 2px;
+    background-color: #797979;
+    height: 460px;
+}
+
+#trailer{
+    margin-top: 70px;
+    margin-left: 50px;
+}
+
+#info-movies, #trailer{
+    display: inline-block;
+    
+}
+
+#site-icons{
+    margin-top: 10px;
+}
+#site-icons a{
+    width: 100px;
+}
