@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 window.onload =() =>{
+
     let movies = null;
 //Click de la imagen Bird Box
 fetch("http://www.omdbapi.com/?t=bird+box&plot=full&apikey=7f7da682")
@@ -198,7 +199,7 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
             <div class="container">
               <div id="card-movie" class="col s6 m3" >
               <div class="card" >
-               <img class="imagen-mivies responsive-img"  movie="${characters[i].title}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+               <img class="imagen-movies responsive-img"  movie="${characters[i].title}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                 <div class="card-content">
                  <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${characters[i].title}</p></span>
                </div>
