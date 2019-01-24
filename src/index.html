@@ -14,18 +14,21 @@
   <body>
 
     <header>
+        
         <div class="navbar-fixed">
-            <nav>
+            <nav class="navbar">
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo">Logo</a>
-                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Busca tu estreno">
-                    <ul class="right hide-on-med-and-down">
-                        <li><a id="start">Inicio</a></li>
-                        <li><a id="movies">Peliculas</a></li>
-                    </ul>
+                        <a href="#!" class="brand-logo"><img id="logo" class="responsive-img"src="http://subirimagen.me/uploads/20190124070159.png"></a>
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Busca tu estreno">
+                        <ul class="right hide-on-med-and-down">
+                            <li><a id="start">Inicio</a></li>
+                            <li><a id="movies">Peliculas</a></li>
+                        </ul>
     
                 </div>
-             </nav>
+                
+            </nav>
+       
         </div>
 
     </header>
@@ -34,143 +37,150 @@
     <div id="page1">
          <!--Carousel con imagenes-->   
         <div class="carousel carousel-slider center">
+
             <div class="carousel-fixed-item center"></div> 
 
                 <div class="carousel-item  white-text" href="#one!">
-                    <img id="movie-1" src="file:///Users/johanna/Downloads/imagen1.webp" alt="">
+                    <img id="movie-1" src="http://subirimagen.me/uploads/20190123115745.png" alt="">
                 </div>
 
                 <div class="carousel-item  white-text" href="#two!">
-                    <img id="movie-2" src="file:///Users/johanna/Downloads/imagen2.webp" alt="">
+                    <img id="movie-2" src="http://subirimagen.me/uploads/20190123115851.png" alt="">
                 </div>
 
                 <div class="carousel-item  white-text" href="#three!">
-                    <img id="movie-3" src="" alt="">
+                    <img id="movie-3" src="http://subirimagen.me/uploads/20190123115920.jpg" alt="">
                 </div>
 
                 <div class="carousel-item  white-text" href="#four!">
-                    <img id="movie-4" src="" alt="">
+                    <img id="movie-4" src="http://subirimagen.me/uploads/20190123115954.jpg" alt="">
                 </div>
-            </div>
+            
         </div>
-        <h1 id="movies-popular">Peliculas destacadas</h1>
-        <hr>
-        <!--card-->
-        <div class="col s6 m3" >          
-                <div class="card">
-                    <img class="imagen-aquaman responsive-img" src="file:///Users/johanna/Downloads/Avengers.webp" >
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-2"><h6>Titulo</h6><i class="material-icons right">more_vert</i></span>
-                                <p style=" color: grey"> Año:</p>
-                                    <p style=" color: grey"> Genero:</p>
-                        </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-                        <p> Año: </p>
-                        <p> Genero:</p>
-                        <span class="link-info" data=''></span>
-                    </div>
-                </div>
-            </div>
-      
+
+        <div class="container">
+            <h5 id="movies-popular">Peliculas Destacadas</h5>
+            <section class="popular2"id="popular"></section>
+        </div>
+        
+
     </div>
+
 
     <div id="page2">
-        <!--seccion select-->
-        <section class="select">
-            <div class="container">
-             <div class="row">
-                <div class="input-field col s12 m6">
-                    <select class="icons">
-                        <option value="" disabled selected>Año</option>
-                        <option value="" data-icon="images/sample-1.jpg"></option>
-                        <option value="" data-icon="images/office.jpg">example 2</option>
-                        <option value="" data-icon="images/yuna.jpg">example 3</option>
-                    </select>
-                    
-                </div>
 
-                <div class="input-field col s12 m6">
-                    <select class="icons">
-                        <option value="" disabled selected>Genero</option>
-                        <option value="" data-icon="images/sample-1.jpg" class="left">Acción</option>
-                        <option value="" data-icon="images/office.jpg" class="left">Drama</option>
-                        <option value="" data-icon="images/yuna.jpg" class="left">Ciencia ficción</option>
-                    </select>
-                </div>
-             </div>
-            </div>
-        </section>
-
-        <div id="movies-list" class="row" ></div>
-
-        <!--card-->
-        <div class="col s6 m3" >          
-            <div class="card">
-                <img class="imagen-aquaman responsive-img" src="file:///Users/johanna/Downloads/Avengers.webp" >
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-2"><h6>Titulo</h6><i class="material-icons right">more_vert</i></span>
-                            <p style=" color: grey"> Año:</p>
-                                <p style=" color: grey"> Genero:</p>
+        <div class="container">
+            <div class="row">
+                <div  id="select-filter"> 
+                    <div class="input-field col s12 m6">
+                        <select id="filter" class="icons">
+                            <option value="" disabled selected>Buscar por genero</option>
+                            <option value="28" >Accion</option>
+                            <option value="12" >Aventuras</option>
+                            <option value="16" >Animacion</option>
+                            <option value="35" >Comedia</option>
+                            <option value="80" >Crimen</option>
+                            <option value="18" >Drama</option>
+                            <option value="10751" >Familia</option>
+                            <option value="14" >Fantasia</option>
+                            <option value="36" >Historia</option>
+                            <option value="27" >Terror</option>
+                            <option value="9648" >Misterio</option>
+                            <option value="10749" >Romance</option>
+                            <option value="878" >Ciencia ficcion</option>
+                        </select>
+                        
                     </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-                    <p> Año: </p>
-                    <p> Genero:</p>
-                    <span class="link-info" data=''></span>
                 </div>
+    
+                    <div class="input-field col s12 m6">
+                        <select  id="filter_year"class="icons">
+                            <option value="" disabled selected>Buscar por año</option>
+                            <option value="2019" >2019</option>
+                            <option value="2018" >2018</option>
+                        </select>
+                    </div>
+
             </div>
         </div>
-
+            
+        
     </div>
 
 
-    <!--Pagina Información-->
+
     <div id="page3">
-
+        <div id="movies-list" class="row" ></div>
+    </div>
         
-            <div class="row">
-            <!--Seccion de información y trailer-->
-            <section class="info">
-                <div class="col s12 m6">
-                    <div id="trailer">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/hV-CqyvFX0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+    <div id="page4">
+        <div id="movies-filter" class="row" ></div>
+    </div>
+        
+    <div id="page5">
+        <div id="filter-year" class="row" ></div>
+    </div>
+        
+   
+    <!--Pagina Información-->   
+
+    <div id="page6">
+
+        <div id="info-trailer" >
+            
+            <div id="trailer" class="col s12 m6">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/XD8h_UelYaU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
+            </div> 
+
+            
+            <div id="info-movies" class="col s12 m6">
+                <div id="icons-start">              
+                    <i class="material-icons" style="color:#ebc90a">star</i>
+                    <i class="material-icons" style="color:#ebc90a">star</i>
+                    <i class="material-icons" style="color:#ebc90a">star</i>
+                    <i class="material-icons" style="color:#ebc90a">star_border</i>
+                    <i class="material-icons" style="color:#ebc90a">star_border</i>
                 </div>
 
-                <div class="col s12 m6">
-                    <div id="info-movies"></div>
+                <div id="infopage6">
                 </div>
 
-            </section>
-        </div>
-        
-        </div>
+                <div id="site-icons">
+                    <a href="https://www.pelispedia.tv/" id="pelispedia"><img class="link-movies" src="http://subirimagen.me/uploads/20190123162204.png" alt=""></a>  
+                    <a href="https://www.cuevana2.com/" id="cuevana"><img class="link-movies" src="http://subirimagen.me/uploads/20190123162223.png" alt=""></a>  
+                    <a href="https://www.cinecalidad.to/" id="cinecalidad"><img class="link-movies" src="http://subirimagen.me/uploads/20190123162244.png" alt=""></a>  
+                </div>
 
+            </div>
+
+        </div>
+            
         <div class="container">
             <div class="row">
                 <div class="col s12 m12">
                     <div id="comments">
                         <h2 id="comments-tittle">Comentarios</h2>
-                        <hr>
-                        <div class="row">
+                        
+                            <div class="row">
                                 <form id="comments-text" class="col s12">
-                                  <div class="row">
+                                 <div class="row">
                                     <div class="input-field col s12">
-                                      <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                      <label for="textarea1">Deja tu comentario aquí</label>
+                                      <textarea id="textarea1" class="materialize-textarea" ></textarea>
                                     </div>
-                                  </div>
+                                 </div>
                                 </form>
-                              </div>
+                            </div>
                                     
 
                     </div>
+
                 </div>
+
             </div>
         </div>
 
     </div>
+   
 
     
     <div id="root" class="row"></div>
@@ -180,14 +190,12 @@
         <div class="container">
             <div id="icons-media" class="row">
                 
-             <img class="responsive-img" id="instagram-icon" src="file:///Users/johanna/Downloads/instagram-blanco.webp" alt="">
-             <img class="responsive-img" id="facebook-icon"src="file:///Users/johanna/Downloads/facebook-blanco.webp" alt="">
+             <a href="https://www.instagram.com/?hl=es-la"><img class="responsive-img" id="instagram-icon" src="file:///Users/johanna/Downloads/instagram-blanco.webp" alt=""></a>
+             <a href="https://www.facebook.com/"><img class="responsive-img" id="facebook-icon"src="file:///Users/johanna/Downloads/facebook-blanco.webp" alt=""></a>
             </div>
         </div>
     </footer>
-                        
-
-   
+                           
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

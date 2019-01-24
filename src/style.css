@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
 body{
     background-color:#e0e0e0;
+    font-family: 'Titillium Web', sans-serif;
 }
 
-.nav-wrapper{
+.navbar{
     background-color:#212121;
 }
 
@@ -11,14 +14,11 @@ body{
     margin-right: 20px;
 }
 
-
 .page-footer{
     background-color:#212121;
-  margin-top: 90px;
+    margin-top: 30px;
     height: 70px;
     width: 100%;
-    position: static;
-    
 }
 
 #top-movies{
@@ -36,18 +36,23 @@ input#myInput{
     margin-right: 20px;
     text-align: center;
 }
-img.responsive-img{
-    width: 250px;
-    height: 250px;
+
+.carousel.carousel-slider .carousel-item{
+    min-height: 320px;
 }
 
-#page2{
+#page2,#page3,#page6{
     display:none
 }
 
-#instagram-icon, #facebook-icon, #wsp-icon{
+#instagram-icon, #facebook-icon{
     width: 45px;
     height: 45px;
+}
+
+.popular {
+    width: 175px;
+    height: 300px;
 }
 
 div#icons-media{
@@ -57,35 +62,139 @@ div#icons-media{
     margin-bottom: 5px;
 }
 
-#movie-1{
+img.responsive-img, img{
+    width: 220px;
     height: 300px;
+    padding: 4px;
+}
+
+h5{
+    font-family:  'Titillium Web', sans-serif;
+}
+
+ .popular2{
+    flex-direction: row;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    padding: 25px 0px 30px 0px;
+    display: flex;
+    justify-content: center;
 }
 
 div.select-wrapper{
     width: 200px;
     margin-left: 70px;
     margin-right: 30px;
-};
+}
 
-div.card{
-    width: 250px;
-    height: 370px;
+#movies-popular{
+    font-size: 25px;
+    margin-left: 30px;
+    margin-top:0%;
+}
+
+#comments-tittle{
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+#comments-text{
+    border: grey solid 2px;
+    margin-top: 10px;
+    height: 150px;
+}
+
+textarea.materialize-textarea{
+    border-bottom: none;
+    box-shadow: none;
+}
+
+textarea#textarea1.materialize-textarea{
+    font-size: none;
+}
+
+#icons-start{
+   
+    padding:1px;
+}
+
+#more-info{
+    color:white;
+    font-size: 15px;
+    margin:8px; 
 }
 
 #info-movies{
-    border: grey solid 2px;
-    width: 600px;
-    height: 315px;
+    width: 550px;
+    height: 350px;
+    margin-top: 0%;
+    padding: 0%;
+    margin-bottom: 50px;
+    margin-left: 50px;
 }
 
-
-#movies-popular{
-    font-size: 28px;
+#info-trailer{
+    background-color: #312f2f;
+    height: 460px;
+    margin-top: -40px;
 }
 
-#comments-tittle{s
-    font-size: 25px;
-    margin-top: 40px;
-    border: grey solid 1px;
+#trailer{
+    margin-top: 70px;
+    margin-left: 50px;
 }
-#comments-text
+
+#info-movies, #trailer{
+    display: inline-block;
+}
+
+#page6{
+    display: none;
+}
+
+img.link-movies{
+    width: 120px;
+    height: 45px;
+}
+
+img#logo{
+    width: 200px;
+    height: 30px;
+    margin-top:15px;
+    margin-left: 20px;
+}
+
+img#movie-1,img#movie-2,img#movie-3,img#movie-4{
+    padding: 0px;
+
+}
+ul#indicators{
+    margin-top:-40px;
+    height: 40px;
+}
+
+/*.info-movies{
+    font-size: 15px;
+    color: #e0e0e0;
+    
+}*/
+
+div#infopage6{
+    font-size: 17px;
+    color: #c4c4c4;
+}
+
+.card{
+    height: 421px;
+}
+
+.tittle-movies{
+    font-size: 16px;
+    color: #312f2f;
+   
+}
+
+.card .card-content{
+    padding:5px;
+}
+
