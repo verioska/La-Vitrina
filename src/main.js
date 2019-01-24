@@ -35,7 +35,17 @@ $(document).on('click', '#movie1', (event) => {
     <p> Director: ${ data.Director}</p>
     <p> Género: ${ data.Genre}</p>
     <p> Actores: ${ data.Actors}</p>
+    <div id="trailer" class="col s12 m6">
     `
+    fetch("https://api.themoviedb.org/3/movie/"+id+"/videos?api_key=48819a4f88e3d597df63bebab6723d0f")
+  .then(data=>data.json())
+    .then(data=>{
+      let video=data.results
+      console.log(video)
+      document.getElementById("trailer").innerHTML =  `
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/${video[0].key}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+      `
+  })  
   });
 
 
@@ -60,7 +70,7 @@ $(document).on('click', '#movie2', (event) => {
   fetch("http://www.omdbapi.com/?t=aquaman&plot=full&apikey=7f7da682")
   .then(data=>data.json())
   .then(data=>{
-    
+    let id=data.imdbID
     console.log(data, 'este es el detalle de la peli');
     console.log(data.title)
     document.getElementById("infopage6").innerHTML =  `
@@ -69,7 +79,17 @@ $(document).on('click', '#movie2', (event) => {
     <p> Director: ${ data.Director}</p>
     <p> Género: ${ data.Genre}</p>
     <p> Actores: ${ data.Actors}</p>
+    <div id="trailer" class="col s12 m6">
     `
+    fetch("https://api.themoviedb.org/3/movie/"+id+"/videos?api_key=48819a4f88e3d597df63bebab6723d0f")
+    .then(data=>data.json())
+      .then(data=>{
+        let video=data.results
+        console.log(video)
+        document.getElementById("trailer").innerHTML =  `
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/${video[0].key}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        `
+    })  
   });
 
 })
@@ -94,7 +114,7 @@ $(document).on('click', '#movie3', (event) => {
   fetch("http://www.omdbapi.com/?t=glass&plot=full&apikey=7f7da682")
   .then(data=>data.json())
   .then(data=>{
-    
+    let id=data.imdbID
     console.log(data, 'este es el detalle de la peli');
     console.log(data.title)
     document.getElementById("infopage6").innerHTML =  `
@@ -103,7 +123,17 @@ $(document).on('click', '#movie3', (event) => {
     <p> Director: ${ data.Director}</p>
     <p> Género: ${ data.Genre}</p>
     <p> Actores: ${ data.Actors}</p>
+    <div id="trailer" class="col s12 m6">
     `
+    fetch("https://api.themoviedb.org/3/movie/"+id+"/videos?api_key=48819a4f88e3d597df63bebab6723d0f")
+    .then(data=>data.json())
+      .then(data=>{
+        let video=data.results
+        console.log(video)
+        document.getElementById("trailer").innerHTML =  `
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/${video[0].key}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        `
+    })
   });
 
 })
@@ -128,7 +158,7 @@ $(document).on('click', '#movie4', (event) => {
   fetch("http://www.omdbapi.com/?t=venom&plot=full&apikey=7f7da682")
   .then(data=>data.json())
   .then(data=>{
-    
+    let id=data.imdbID
     console.log(data, 'este es el detalle de la peli');
     console.log(data.title)
     document.getElementById("infopage6").innerHTML =  `
@@ -137,7 +167,17 @@ $(document).on('click', '#movie4', (event) => {
     <p> Director: ${ data.Director}</p>
     <p> Género: ${ data.Genre}</p>
     <p> Actores: ${ data.Actors}</p>
+    <div id="trailer" class="col s12 m6">
     `
+    fetch("https://api.themoviedb.org/3/movie/"+id+"/videos?api_key=48819a4f88e3d597df63bebab6723d0f")
+    .then(data=>data.json())
+      .then(data=>{
+        let video=data.results
+        console.log(video)
+        document.getElementById("trailer").innerHTML =  `
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/${video[0].key}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        `
+    })
   });
 
 })
