@@ -10,7 +10,7 @@ fetch("http://www.omdbapi.com/?t=bird+box&plot=full&apikey=7f7da682")
 .then(data=>data.json())
 .then(data=>{
   document.getElementById("popular").innerHTML += `
-      <img class="responsive-img"  id="movie2"  movie="${data.title}" src="${data.Poster}">`
+      <img class="responsive-img"  id="movie1"  movie="${data.title}" src="${data.Poster}">`
 });
   
 
@@ -19,6 +19,7 @@ $(document).on('click', '#movie1', (event) => {
   document.getElementById('page1').style.display='none';
   document.getElementById('page2').style.display='none';
   document.getElementById('page3').style.display='none';
+  document.getElementById('page7').style.display='none';
   document.getElementById('page6').style.display='block';
   const title = event.target.attributes[1].value;
   console.log(title,"es el titulo")
@@ -53,6 +54,7 @@ $(document).on('click', '#movie2', (event) => {
   document.getElementById('page2').style.display='none';
   document.getElementById('page3').style.display='none';
   document.getElementById('page6').style.display='block';
+  document.getElementById('page7').style.display='none';
   const title = event.target.attributes[1].value;
   console.log(title,"es el titulo")
   fetch("http://www.omdbapi.com/?t=aquaman&plot=full&apikey=7f7da682")
@@ -86,6 +88,7 @@ $(document).on('click', '#movie3', (event) => {
   document.getElementById('page2').style.display='none';
   document.getElementById('page3').style.display='none';
   document.getElementById('page6').style.display='block';
+  document.getElementById('page7').style.display='none';
   const title = event.target.attributes[1].value;
   console.log(title,"es el titulo")
   fetch("http://www.omdbapi.com/?t=glass&plot=full&apikey=7f7da682")
@@ -119,6 +122,7 @@ $(document).on('click', '#movie4', (event) => {
   document.getElementById('page2').style.display='none';
   document.getElementById('page3').style.display='none';
   document.getElementById('page6').style.display='block';
+  document.getElementById('page7').style.display='none';
   const title = event.target.attributes[1].value;
   console.log(title,"es el titulo")
   fetch("http://www.omdbapi.com/?t=venom&plot=full&apikey=7f7da682")
@@ -152,7 +156,7 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
         let title= characters[i].title
         document.getElementById('movies-list').innerHTML +=  `
             <div class="container">
-              <div id="card-movie" class="col s12 m3" >
+              <div id="card-movie" class="col s6 m3" >
               <div class="card" >
                <img class="imagen-mivies responsive-img"  movie="${characters[i].title}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                 <div class="card-content">
@@ -169,6 +173,7 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
 document.getElementById('page1').style.display='none';
 document.getElementById('page2').style.display='block';
 document.getElementById('page3').style.display='block';
+document.getElementById('page7').style.display='none';
 });  
 }); 
 
@@ -183,6 +188,7 @@ $(document).on('click', '#card-movie', (event) => {
   document.getElementById('page2').style.display='none';
   document.getElementById('page3').style.display='none';
   document.getElementById('page6').style.display='block';
+  document.getElementById('page7').style.display='none';
   const title = event.target.attributes[1].value;
   console.log(title,"es el titulo")
   fetch("http://www.omdbapi.com/?t="+title+"&plot=full&apikey=7f7da682")
@@ -232,6 +238,7 @@ fetch("https://api.themoviedb.org/3/movie/"+holi+"/videos?api_key=48819a4f88e3d5
   document.getElementById("page3").style.display="none";
   document.getElementById("page5").style.display="none";
   document.getElementById('page6').style.display='none';
+  document.getElementById('page7').style.display='none';
  
 });
 
@@ -241,6 +248,7 @@ document.getElementById("filter").addEventListener("change", (event)=>{
   document.getElementById("page3").style.display="none";
   document.getElementById('page6').style.display='none';
   document.getElementById('page5').style.display='block';
+  document.getElementById('page7').style.display='none';
   
   document.getElementById("filter-year").innerHTML="";
   let genero = document.getElementById("filter").value;
@@ -256,7 +264,7 @@ document.getElementById("filter").addEventListener("change", (event)=>{
     for (let i = 0; i <gen.length; i++){
           document.getElementById("filter-year").innerHTML += `
           <div class="container">
-          <div id="movies-filter" class="col s12 m3" >
+          <div id="movies-filter" class="col s6 m3" >
           <div class="card" >
            <img class="imagen-mivies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
             <div class="card-content">
@@ -284,6 +292,7 @@ $(document).on('click', '#movies-filter', (event) => {
   document.getElementById('page4').style.display='none';
   document.getElementById('page5').style.display='none';
   document.getElementById('page6').style.display='block';
+  document.getElementById('page7').style.display='none';
   document.getElementById("filter-year").style.display='block';
   const title = event.target.attributes[1].value;
   console.log(title,"es el titulo")
@@ -313,6 +322,7 @@ $(document).on('click', '#movies-filter', (event) => {
     event.preventDefault();
     document.getElementById("page3").style.display="none";
     document.getElementById('page6').style.display='none';
+    document.getElementById('page7').style.display='none';
     document.getElementById("filter-year").style.display='block';
     
      document.getElementById("filter-year").innerHTML="";
@@ -330,7 +340,7 @@ $(document).on('click', '#movies-filter', (event) => {
              
 
              <div class="container">
-             <div id="movies-filter" class="col s12 m3" >
+             <div id="movies-filter" class="col s6 m3" >
              <div class="card" >
               <img class="imagen-mivies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                <div class="card-content">
@@ -348,11 +358,18 @@ $(document).on('click', '#movies-filter', (event) => {
   
   document.getElementById('myInput').addEventListener("keydown", (e) => {
          if(e.keyCode === 13){
+          document.getElementById('page1').style.display='none';
+          document.getElementById('page2').style.display='none';
+          document.getElementById('page3').style.display='none';
+          document.getElementById('page4').style.display='none';
+          document.getElementById('page5').style.display='none';
+          document.getElementById('page6').style.display='none';
           document.getElementById('page7').style.display='block';
-           alert("hola")
+           
            let tittle= document.getElementById('myInput').value
            console.log(tittle,"es el titulo")
-                fetch("http://www.omdbapi.com/?t="+tittle+"&apikey=7f7da682")
+           document.getElementById('page7').innerHTML="";
+                fetch("http://www.omdbapi.com/?t="+tittle+"&apikey=7f7da682&y=2019")
                .then(data=>data.json())
                .then(data=>{
                   console.log(data)
@@ -361,11 +378,11 @@ $(document).on('click', '#movies-filter', (event) => {
                      
                    document.getElementById('page7').innerHTML += `
                    <div class="container">
-                   <div id="card-movie" class="col s12 m3" >
+                   <div id="card-movie" class="col s6 " >
                    <div class="card" >
                     <img class="imagen-mivies responsive-img"  src="${data.Poster}" >
                      <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${data.title}</p></span>
+                      <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${data.Title}</p></span>
                     </div>
                    </div>  
                   </div> 
