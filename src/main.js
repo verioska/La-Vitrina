@@ -10,9 +10,10 @@ fetch("http://www.omdbapi.com/?t=bird+box&plot=full&apikey=7f7da682")
 .then(data=>data.json())
 .then(data=>{
   document.getElementById("popular").innerHTML += `
-           <img class="responsive-img"  id="movie1"  movie="${data.title}" src="${data.Poster}">`
-           console.log(data.title,"es el titulo")
+      <img class="responsive-img"  id="movie2"  movie="${data.title}" src="${data.Poster}">`
 });
+  
+
 $(document).on('click', '#movie1', (event) => {
   event.preventDefault();
   document.getElementById('page1').style.display='none';
@@ -24,7 +25,7 @@ $(document).on('click', '#movie1', (event) => {
   fetch("http://www.omdbapi.com/?t=bird+box&plot=full&apikey=7f7da682")
   .then(data=>data.json())
   .then(data=>{
-    
+    let id=data.imdbID
     console.log(data, 'este es el detalle de la peli');
     console.log(data.title)
     document.getElementById("infopage6").innerHTML =  `
@@ -35,6 +36,7 @@ $(document).on('click', '#movie1', (event) => {
     <p> Actores: ${ data.Actors}</p>
     `
   });
+
 
 })
 
@@ -136,7 +138,7 @@ $(document).on('click', '#movie4', (event) => {
 
 })
 
-
+let characters=""
 document.getElementById('movies').addEventListener('click',
 (event) => {
 event.preventDefault();
@@ -144,7 +146,7 @@ event.preventDefault();
 fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63bebab6723d0f&primary_release_year=2019&page=1")
     .then(data=>data.json())
     .then(data=>{
-      let characters= data.results;
+      characters= data.results;
       console.log('data buena', data);
       for (let i = 0; i <characters.length; i++){
         let title= characters[i].title
@@ -162,8 +164,7 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
         </div>
             `
             
-            console.log(characters[i].id)
-          }
+          }        
 
 document.getElementById('page1').style.display='none';
 document.getElementById('page2').style.display='block';
@@ -173,8 +174,11 @@ document.getElementById('page3').style.display='block';
 
 //dandole click a la pantalla 2
 
+
+
 $(document).on('click', '#card-movie', (event) => {
   event.preventDefault();
+  
   document.getElementById('page1').style.display='none';
   document.getElementById('page2').style.display='none';
   document.getElementById('page3').style.display='none';
@@ -184,19 +188,36 @@ $(document).on('click', '#card-movie', (event) => {
   fetch("http://www.omdbapi.com/?t="+title+"&plot=full&apikey=7f7da682")
   .then(data=>data.json())
   .then(data=>{
-    
+    let holi=data.imdbID
     console.log(data, 'este es el detalle de la peli');
-    console.log(data.title)
+    console.log(holi)
     document.getElementById("infopage6").innerHTML =  `
     <p> Título: ${ data.Title}</p>
     <p> Duración: ${ data.Runtime}</p>
     <p> Director: ${ data.Director}</p>
     <p> Género: ${ data.Genre}</p>
     <p> Actores: ${ data.Actors}</p>
+    <div id="trailer" class="col s12 m6">
+                    
+            </div>
     `
+console.log(holi)     
+
+fetch("https://api.themoviedb.org/3/movie/"+holi+"/videos?api_key=48819a4f88e3d597df63bebab6723d0f")
+  .then(data=>data.json())
+    .then(data=>{
+      let video=data.results
+      console.log(video)
+      document.getElementById("trailer").innerHTML =  `
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/${video[0].key}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+      `
+  })  
+   
+  })
+  
+  
 
 
-  });
 
 })
 
@@ -323,21 +344,42 @@ $(document).on('click', '#movies-filter', (event) => {
          `
        }
        });
-
   })
   
-
   document.getElementById('myInput').addEventListener("keydown", (e) => {
          if(e.keyCode === 13){
+          document.getElementById('page7').style.display='block';
            alert("hola")
-         }
-    })
-  
-
-
-      
+           let tittle= document.getElementById('myInput').value
+           console.log(tittle,"es el titulo")
+                fetch("http://www.omdbapi.com/?t="+tittle+"&apikey=7f7da682")
+               .then(data=>data.json())
+               .then(data=>{
+                  console.log(data)
+                   
+                 
+                     
+                   document.getElementById('page7').innerHTML += `
+                   <div class="container">
+                   <div id="card-movie" class="col s12 m3" >
+                   <div class="card" >
+                    <img class="imagen-mivies responsive-img"  src="${data.Poster}" >
+                     <div class="card-content">
+                      <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${data.title}</p></span>
+                    </div>
+                   </div>  
+                  </div> 
+                </div>
+             </div>
+                   ` 
+                 
+                
+               })
+             }
+            })
+    
+     
 }
-
 
 
 
