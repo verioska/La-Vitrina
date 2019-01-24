@@ -17,7 +17,7 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo">Logo</a>
+                        <a href="#!" class="brand-logo"><img id="logo" class="responsive-img"src="http://subirimagen.me/uploads/20190124070159.png"></a>
                     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Busca tu estreno 2018-2019">
                     <ul class="right hide-on-med-and-down">
                         <li><a id="start">Inicio</a></li>
@@ -52,11 +52,11 @@
                     <img id="movie-4" src="http://subirimagen.me/uploads/20190123115954.jpg" alt="">
                 </div>
             </div>
-            <h5>Peliculas Destacadas</h5>
-         <section class="popular2"id="popular">
-             
-         </section>
-           
+
+            <div class="container">
+                <h5 id="movies-popular">Peliculas Destacadas</h5>
+                <section class="popular2"id="popular"></section>
+            </div>
     </div>
 
     <div id="page2">
@@ -100,15 +100,7 @@
     </div>
 <div id="page3">
     <div id="movies-list" class="row" ></div>
-    <ul class="pagination">
-            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-            <li class="active"><a href="#!">1</a></li>
-            <li class="waves-effect"><a href="#!">2</a></li>
-            <li class="waves-effect"><a href="#!">3</a></li>
-            <li class="waves-effect"><a href="#!">4</a></li>
-            <li class="waves-effect"><a href="#!">5</a></li>
-            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-          </ul>
+  
 </div>
 
 <div id="page4">
@@ -120,54 +112,61 @@
 </div>
 
 <div id="page6">
-    <div id="infopage6"></div>
-  <div id="info-trailer" >
-    <div id="trailer" class="col s12 m6">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/hV-CqyvFX0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-    </div> 
-     <div id="info-movies" class="col s12 m6">
-         <div id="icons-start">              
-             <i class="material-icons" style="color:#ebc90a">star</i>
-             <i class="material-icons" style="color:#ebc90a">star</i>
-             <i class="material-icons" style="color:#ebc90a">star</i>
-             <i class="material-icons" style="color:#ebc90a">star_border</i>
-             <i class="material-icons" style="color:#ebc90a">star_border</i>
-         </div>
-        <div id="info-movie">
-            <h4 id="original-tittle">Titulo original:</h3>
-            <p class="data-movie" id="duration">Duración:</p>
-            <p class="data-movie"id="director">Director:</p>
-            <p class="data-movie"id="gender">Genero:</p>       
-            <p class="data-movie"id="movie-casting">Reparto:</p>
+
+        <div id="info-trailer" >
+            
+            <div id="trailer" class="col s12 m6">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/hV-CqyvFX0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
+            </div> 
+
+            
+            <div id="info-movies" class="col s12 m6">
+                <div id="icons-start">              
+                    <i class="material-icons" style="color:#ebc90a">star</i>
+                    <i class="material-icons" style="color:#ebc90a">star</i>
+                    <i class="material-icons" style="color:#ebc90a">star</i>
+                    <i class="material-icons" style="color:#ebc90a">star_border</i>
+                    <i class="material-icons" style="color:#ebc90a">star_border</i>
+                </div>
+
+                <div id="infopage6">
+                </div>
+
+                <div id="site-icons">
+                    <a href="https://www.pelispedia.tv/" id="pelispedia"><img class="link-movies" src="http://subirimagen.me/uploads/20190123162204.png" alt=""></a>  
+                    <a href="https://www.cuevana2.com/" id="cuevana"><img class="link-movies" src="http://subirimagen.me/uploads/20190123162223.png" alt=""></a>  
+                    <a href="https://www.cinecalidad.to/" id="cinecalidad"><img class="link-movies" src="http://subirimagen.me/uploads/20190123162244.png" alt=""></a>  
+                </div>
+                
+            </div>
+
         </div>
-        
-       <!-- <div id="site-icons">
-            <a href="#!" id="pelispedia"><img src="http://subirimagen.me/uploads/20190123162204.png" alt=""></a>  
-            <a href="#!" id="cuevana"><img src="http://subirimagen.me/uploads/20190123162223.png" alt=""></a>  
-            <a href="#!" id="cinecalidad"><img src="http://subirimagen.me/uploads/20190123162244.png" alt=""></a>  
-        </div>-->
-     </div>
-   </div>
-        
-     <div class="container">
-        <div class="row">
-            <div class="col s12 m12">
-                <div id="comments">
-                    <h2 id="comments-tittle">Comentarios</h2>
-                    <div class="row">
-                        <form id="comments-text" class="col s12">
+            
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12">
+                    <div id="comments">
+                        <h2 id="comments-tittle">Comentarios</h2>
+                        
                             <div class="row">
-                                <div class="input-field col s12">
-                                    <textarea id="textarea1" class="materialize-textarea" ></textarea>
-                                </div>
+                                <form id="comments-text" class="col s12">
+                                 <div class="row">
+                                    <div class="input-field col s12">
+                                      <textarea id="textarea1" class="materialize-textarea" ></textarea>
+                                    </div>
+                                 </div>
+                                </form>
                             </div>
-                        </form>
-                   </div>
-              </div>
-           </div>
-       </div>
-   </div>
-</div>
+                                    
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
     
     <div id="root" class="row"></div>
 

@@ -5,63 +5,136 @@ document.addEventListener('DOMContentLoaded', function(){
 
 window.onload =() =>{
     let movies = null;
-//     function showCards(data) {
-
-//         document.getElementById('root').innerHTML = ''; 
-        
-//         document.getElementById('movies-list').innerHTML = '';
-//             for (let i = 0; i < data.length; i++) {
-//                 document.getElementById('movies-list').innerHTML += `
-//                     <div class="col s6 m3" >
-//                         <div class="card">
-//                             <img class="imagen-lol responsive-img" src="" >
-//                             <div class="card-content">
-//                                 <span class="card-title activator grey-text text-darken-2"><h6>Titulo</h6><i class="material-icons right">more_vert</i></span>
-//                                 <p style=" color: grey"> Año:</p>
-//                                 <p style=" color: grey"> Genero:</p>
-//                             </div>
-//                             <div class="card-reveal">
-//                                 <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-//                                 <p> Año: </p>
-//                                 <p> Genero:</p>
-//                                 <span class="link" data=''></span>
-//                             </div>
-//                         </div>
-//                         </div>`
-
-// }
-// return showCards;
-// }
-
+//Click de la imagen Bird Box
 fetch("http://www.omdbapi.com/?t=bird+box&plot=full&apikey=7f7da682")
 .then(data=>data.json())
 .then(data=>{
   document.getElementById("popular").innerHTML += `
-           <img class="responsive-img" id="movie" style="cursor: pointer;" movie="${data.id}" src="${data.Poster}">`
+           <img class="responsive-img"  id="movie1"  movie="${data.title}" src="${data.Poster}">`
+           console.log(data.title,"es el titulo")
 });
+$(document).on('click', '#movie1', (event) => {
+  event.preventDefault();
+  document.getElementById('page1').style.display='none';
+  document.getElementById('page2').style.display='none';
+  document.getElementById('page3').style.display='none';
+  document.getElementById('page6').style.display='block';
+  const title = event.target.attributes[1].value;
+  console.log(title,"es el titulo")
+  fetch("http://www.omdbapi.com/?t=bird+box&plot=full&apikey=7f7da682")
+  .then(data=>data.json())
+  .then(data=>{
+    
+    console.log(data, 'este es el detalle de la peli');
+    console.log(data.title)
+    document.getElementById("infopage6").innerHTML =  `
+    <p> Título: ${ data.Title}</p>
+    <p> Duración: ${ data.Runtime}</p>
+    <p> Director: ${ data.Director}</p>
+    <p> Género: ${ data.Genre}</p>
+    <p> Actores: ${ data.Actors}</p>
+    `
+  });
 
+})
 
-
+//Click de la imagen Aquaman
 fetch("http://www.omdbapi.com/?t=aquaman&plot=full&apikey=7f7da682")
 .then(data=>data.json())
 .then(data=>{
   document.getElementById("popular").innerHTML += `
-           <img class="responsive-img" src="${data.Poster}">`
+      <img class="responsive-img"  id="movie2"  movie="${data.title}" src="${data.Poster}">`
 });
+$(document).on('click', '#movie2', (event) => {
+  event.preventDefault();
+  document.getElementById('page1').style.display='none';
+  document.getElementById('page2').style.display='none';
+  document.getElementById('page3').style.display='none';
+  document.getElementById('page6').style.display='block';
+  const title = event.target.attributes[1].value;
+  console.log(title,"es el titulo")
+  fetch("http://www.omdbapi.com/?t=aquaman&plot=full&apikey=7f7da682")
+  .then(data=>data.json())
+  .then(data=>{
+    
+    console.log(data, 'este es el detalle de la peli');
+    console.log(data.title)
+    document.getElementById("infopage6").innerHTML =  `
+    <p> Título: ${ data.Title}</p>
+    <p> Duración: ${ data.Runtime}</p>
+    <p> Director: ${ data.Director}</p>
+    <p> Género: ${ data.Genre}</p>
+    <p> Actores: ${ data.Actors}</p>
+    `
+  });
+
+})
+
+//Click de la imagen Glass
 fetch("http://www.omdbapi.com/?t=glass&plot=full&apikey=7f7da682")
 .then(data=>data.json())
 .then(data=>{
   document.getElementById("popular").innerHTML += `
-           <img class="responsive-img" src="${data.Poster}">`
+     <img class="responsive-img"  id="movie3"  movie="${data.title}" src="${data.Poster}">`
 });
+
+$(document).on('click', '#movie3', (event) => {
+  event.preventDefault();
+  document.getElementById('page1').style.display='none';
+  document.getElementById('page2').style.display='none';
+  document.getElementById('page3').style.display='none';
+  document.getElementById('page6').style.display='block';
+  const title = event.target.attributes[1].value;
+  console.log(title,"es el titulo")
+  fetch("http://www.omdbapi.com/?t=glass&plot=full&apikey=7f7da682")
+  .then(data=>data.json())
+  .then(data=>{
+    
+    console.log(data, 'este es el detalle de la peli');
+    console.log(data.title)
+    document.getElementById("infopage6").innerHTML =  `
+    <p> Título: ${ data.Title}</p>
+    <p> Duración: ${ data.Runtime}</p>
+    <p> Director: ${ data.Director}</p>
+    <p> Género: ${ data.Genre}</p>
+    <p> Actores: ${ data.Actors}</p>
+    `
+  });
+
+})
+
+//Click de la imagen Venem
+
 fetch("http://www.omdbapi.com/?t=venom&plot=full&apikey=7f7da682")
 .then(data=>data.json())
 .then(data=>{
   document.getElementById("popular").innerHTML += `
-           <img class="responsive-img" src="${data.Poster}">`
+  <img class="responsive-img"  id="movie4"  movie="${data.title}" src="${data.Poster}">`
 });
+$(document).on('click', '#movie4', (event) => {
+  event.preventDefault();
+  document.getElementById('page1').style.display='none';
+  document.getElementById('page2').style.display='none';
+  document.getElementById('page3').style.display='none';
+  document.getElementById('page6').style.display='block';
+  const title = event.target.attributes[1].value;
+  console.log(title,"es el titulo")
+  fetch("http://www.omdbapi.com/?t=venom&plot=full&apikey=7f7da682")
+  .then(data=>data.json())
+  .then(data=>{
+    
+    console.log(data, 'este es el detalle de la peli');
+    console.log(data.title)
+    document.getElementById("infopage6").innerHTML =  `
+    <p> Título: ${ data.Title}</p>
+    <p> Duración: ${ data.Runtime}</p>
+    <p> Director: ${ data.Director}</p>
+    <p> Género: ${ data.Genre}</p>
+    <p> Actores: ${ data.Actors}</p>
+    `
+  });
 
-
+})
 
 
 document.getElementById('movies').addEventListener('click',
@@ -75,13 +148,6 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
       console.log('data buena', data);
       for (let i = 0; i <characters.length; i++){
         let title= characters[i].title
-        //  fetch ("http://www.omdbapi.com/?t="+title+"&page=1&apikey=7f7da682&y=2019")
-        //    .then (res=>res.json())
-        //    .then (res =>{
-        //      console.log('data mala', res);
-        //      movies = res;
-            
-        //   })
         document.getElementById('movies-list').innerHTML +=  `
             <div class="container">
               <div id="card-movie" class="col s12 m3" >
@@ -95,8 +161,9 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
            </div>
         </div>
             `
-          
-        }
+            
+            console.log(characters[i].id)
+          }
 
 document.getElementById('page1').style.display='none';
 document.getElementById('page2').style.display='block';
@@ -257,8 +324,35 @@ $(document).on('click', '#movies-filter', (event) => {
        }
        });
 
-
   })
+  let number = document.getElementsByClassName("number");
+  console.log(number)
+     function nextPages () {
+       let gender= document.getElementById("select-gender-category").value;
+       //console.log(document.getElementById("select-gender-category").value)
+         for (let i = 0; i<number.length; i++) {
+           number[i].addEventListener("click",() =>{
+             fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63bebab6723d0f&language=es-MX&with_genres=10751,14,"+gender+"&page="+number[i].value)
+             .then(data => data.json() )
+             .then(data => {
+               allData = data.results;
+               document.getElementById("content1").innerHTML="";
+               for (let i = 0; i <allData.length; i++){
+                 document.getElementById('content1').innerHTML +=
+                 `
+        <div class="col s6 m4">
+           <div  id="images" class="textOverImage card-image responsive-img" data-text="${allData[i].title}
+               ${allData[i].overview}">
+              <img class=" responsive-img" src="https://image.tmdb.org/t/p/w500${allData[i].poster_path}">
+           </div>
+        </div>
+      `
+
+                }
+             })
+           })
+         }
+       }
 
 
 

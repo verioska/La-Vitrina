@@ -49,10 +49,6 @@ div#icons-media{
     width: 150px;
     margin-bottom: 5px;
 }
-.link{
-    color: cadetblue;
-    cursor: pointer;
-}
 .card{
     height: 421px;
 }
@@ -69,6 +65,12 @@ h5{
 p{
     font-size: 15px
 }
+img#logo{
+    width: 240px;
+    height: 33px;
+    margin-top:15px;
+    margin-left: 20px;
+}
 .popular2{
     flex-direction: row;
     align-content: flex-end;
@@ -78,10 +80,51 @@ p{
     justify-content: center;
  
  }
- #info-trailer{
-    border:grey solid 2px;
-    background-color: #797979;
+ #comments-tittle{
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+#comments-text{
+    border: grey solid 2px;
+    margin-top: 10px;
+    height: 150px;
+}
+
+textarea.materialize-textarea{
+    border-bottom: none;
+    box-shadow: none;
+}
+textarea#textarea1.materialize-textarea{
+    font-size: none;
+}
+
+#icons-start{
+    margin:8px;
+}
+
+#more-info{
+    color:white;
+    font-size: 15px;
+    margin:8px; 
+}
+
+
+
+#info-movies{
+    width: 450px;
+    height: 315px;
+    margin-top: 0%;
+    padding: 0%;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+#info-trailer{
+    
+    background-color: #312f2f;
     height: 460px;
+    margin-top: -40px;
 }
 
 #trailer{
@@ -94,9 +137,20 @@ p{
     
 }
 
-#site-icons{
-    margin-top: 10px;
+#page6{
+    display: none;
 }
-#site-icons a{
-    width: 100px;
+
+img.link-movies{
+    width: 120px;
+    height: 45px;
+}
+div#infopage6{
+    font-size: 17px;
+    color: #c4c4c4;
+}
+div.select-wrapper{
+    width: 200px;
+    margin-left: 70px;
+    margin-right: 30px;
 }
