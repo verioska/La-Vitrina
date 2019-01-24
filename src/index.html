@@ -15,47 +15,48 @@
 
     <header>
         
-        <div class="navbar-fixed">
-            <nav class="navbar">
-                <div class="nav-wrapper">
-                        <a href="#!" class="brand-logo"><img id="logo" class="responsive-img"src="http://subirimagen.me/uploads/20190124070159.png"></a>
-                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Busca tu estreno">
-                        <ul class="right hide-on-med-and-down">
-                            <li><a id="start">Inicio</a></li>
-                            <li><a id="movies">Peliculas</a></li>
-                        </ul>
-    
+                <div class="navbar-fixed">
+                     <nav class="navbar">
+                        <div class="nav-wrapper">
+                            <a href="#!" class="brand-logo"><img id="logo" class="responsive-img"src="http://subirimagen.me/uploads/20190124070159.png"></a>
+                            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Busca tu estreno">
+                            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a id="start">Inicio</a></li>
+                                <li><a id="movies">Peliculas</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <ul class="sidenav" id="mobile-demo">
+                        <li><a id="start-1">Inicio</a></li>
+                        <li><a id="movies-1">Peliculas</a></li>  
+                    </ul>
+        
                 </div>
                 
-            </nav>
-       
-        </div>
 
     </header>
         
     
     <div id="page1">
-         <!--Carousel con imagenes-->   
-        <div class="carousel carousel-slider center">
-
-            <div class="carousel-fixed-item center"></div> 
-
-                <div class="carousel-item  white-text" href="#one!">
-                    <img id="movie-1" src="http://subirimagen.me/uploads/20190123115745.png" alt="">
-                </div>
-
-                <div class="carousel-item  white-text" href="#two!">
-                    <img id="movie-2" src="http://subirimagen.me/uploads/20190123115851.png" alt="">
-                </div>
-
-                <div class="carousel-item  white-text" href="#three!">
-                    <img id="movie-3" src="http://subirimagen.me/uploads/20190123115920.jpg" alt="">
-                </div>
-
-                <div class="carousel-item  white-text" href="#four!">
-                    <img id="movie-4" src="http://subirimagen.me/uploads/20190123115954.jpg" alt="">
-                </div>
             
+        <div class="slider">
+            <ul>
+            <li>
+                <img src="http://subirimagen.me/uploads/20190123115745.png" alt="">
+            </li>
+
+            <li>
+                <img src="http://subirimagen.me/uploads/20190123115851.png" alt="">
+            </li>
+            <li>
+                <img src="http://subirimagen.me/uploads/20190123115920.jpg" alt="">
+            </li>
+            <li>
+                <img src="http://subirimagen.me/uploads/20190123115954.jpg" alt="">
+            </li>
+            </ul>
         </div>
 
         <div class="container">
@@ -126,14 +127,12 @@
 
     <div id="page6">
 
-        <div id="info-trailer" >
+        <div  class="flex-info" id="info-trailer">
             
-            <div id="trailer" class="col s12 m6">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/XD8h_UelYaU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>     
-            </div> 
+            <div id="trailer"></div> 
 
             
-            <div id="info-movies" class="col s12 m6">
+            <div id="info-movies">
                 <div id="icons-start">              
                     <i class="material-icons" style="color:#ebc90a">star</i>
                     <i class="material-icons" style="color:#ebc90a">star</i>
@@ -182,7 +181,7 @@
     </div>
    
 
-    
+    <div id="page7" class="row"></div>
     <div id="root" class="row"></div>
 
 
@@ -196,29 +195,31 @@
         </div>
     </footer>
                            
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <script>
-  $(document).ready(function(){
-    $('select').formSelect();
-  });
-  </script>
+     <script>
+     $(document).ready(function(){
+     $('select').formSelect();
+    });
+    </script>
 
-  <script>
-  $('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: true
-  });
- </script>
-
- <script>
+    <script>
      $('#textarea1').val('New Text');
      M.textareaAutoResize($('#textarea1'));
- </script>
+    </script>
 
-<script src="data.js"></script>
-<script src="main.js"></script>
-</body>
+   
+
+    <script>
+    $(document).ready(function(){
+    $(".button-collapse").sideNav()
+    });
+    </script>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+
+  </body>
 </html>

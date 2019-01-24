@@ -21,12 +21,6 @@ body{
     width: 100%;
 }
 
-#top-movies{
-    font-size: 20px;
-    text-align: left;
-    margin-left: 40px;
-}
-
 input#myInput{
     width: 20%;
     height: 40px;
@@ -38,11 +32,7 @@ input#myInput{
     color: white;
 }
 
-.carousel.carousel-slider .carousel-item{
-    min-height: 320px;
-}
-
-#page2,#page3,#page6{
+#page2,#page3,#page6, #page7{
     display:none
 }
 
@@ -67,13 +57,14 @@ img.responsive-img, img{
     width: 220px;
     height: 300px;
     padding: 4px;
+    cursor: pointer;
 }
 
 h5{
     font-family:  'Titillium Web', sans-serif;
 }
 
- .popular2{
+.popular2{
     flex-direction: row;
     align-content: flex-end;
     flex-wrap: wrap;
@@ -86,7 +77,6 @@ div.select-wrapper{
     width: 200px;
     margin-left: 70px;
     margin-right: 30px;
-    
 }
 
 .select-wrapper input.select-dropdown{
@@ -98,7 +88,7 @@ div.select-wrapper{
 #movies-popular{
     font-size: 25px;
     margin-left: 40px;
-    margin-top:0%;
+    margin-top: -30px;
 }
 
 #comments-tittle{
@@ -122,22 +112,14 @@ textarea#textarea1.materialize-textarea{
 }
 
 #icons-start{
-   
-    padding:1px;
-}
-
-#more-info{
-    color:white;
-    font-size: 15px;
-    margin:8px; 
+   padding:1px;
 }
 
 #info-movies{
     width: 550px;
-    height: 350px;
-    margin-top: 0%;
+    height: 330px;
     padding: 0%;
-    margin-bottom: 50px;
+    margin-top: 60px;
     margin-left: 50px;
 }
 
@@ -148,16 +130,12 @@ textarea#textarea1.materialize-textarea{
 }
 
 #trailer{
-    margin-top: 70px;
+    margin-top: 20px;
     margin-left: 50px;
 }
 
 #info-movies, #trailer{
     display: inline-block;
-}
-
-#page6{
-    display: none;
 }
 
 img.link-movies{
@@ -172,18 +150,10 @@ img#logo{
     margin-left: 20px;
 }
 
-img#movie-1,img#movie-2,img#movie-3,img#movie-4{
-    padding: 0px;
-
-}
-ul#indicators{
-    margin-top:-40px;
-    height: 40px;
-}
-
 div#infopage6{
     font-size: 17px;
     color: #c4c4c4;
+    margin-bottom: -10px;
 }
 
 .card{
@@ -200,3 +170,109 @@ div#infopage6{
     padding:5px;
 }
 
+.sidenav-overlay{
+    z-index: 995;
+}
+
+.slider{
+    width: 100%;
+    margin: 0px;
+   overflow: hidden;
+}
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    margin: -4px;
+    animation: cambio 20s infinite alternate linear;
+}
+
+.slider li {
+    width: 100%;
+    list-style: none;
+    margin: -8px;
+}
+
+.slider img {
+    width: 100%;
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+/*#card-search{
+    width: 450px;
+    height: 480px;
+    
+}
+
+.imagen-movies{
+    width: 450px;
+    height: 350px;
+}
+
+div#card-movie{
+    width: 600px;
+    margin-top:30px;
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
+}
+
+.tittle-search{
+    font-size: 20px;    font-family:  'Titillium Web', sans-serif;
+}*/
+
+ul#mobile-demo.sidenav{
+    background-color: #575353;
+    width: 150px;
+
+}
+
+ul#mobile-demo.sidenav a{
+    color: #e0e0e0;
+    font-size: 18px;
+    font-family:  'Titillium Web', sans-serif;
+
+   
+
+}
+
+@media only screen
+and (max-width: 480px){
+    
+    #myInput{
+        display: none;
+    }
+    
+    #info-trailer{
+        background-color: #312f2f;
+        height: 100%;
+        width: 100%;
+        margin-top: -40px;
+    }
+    
+    iframe{
+        width: 330px;
+        height: 200px;
+    }
+
+    #info-movies{
+        width: 250px;
+        height: 200px;
+       
+    }
+
+}
