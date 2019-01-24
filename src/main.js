@@ -154,7 +154,7 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
               <div class="card" >
                <img class="imagen-mivies responsive-img"  movie="${characters[i].title}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                 <div class="card-content">
-                 <span class="card-title activator grey-text text-darken-2"><p>${characters[i].title}</p></span>
+                 <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${characters[i].title}</p></span>
                </div>
               </div>  
              </div> 
@@ -239,7 +239,7 @@ document.getElementById("filter").addEventListener("change", (event)=>{
           <div class="card" >
            <img class="imagen-mivies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
             <div class="card-content">
-             <span class="card-title activator grey-text text-darken-2"><p>${gen[i].title}</p></span>
+             <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${gen[i].title}</p></span>
            </div>
           </div>  
          </div> 
@@ -313,7 +313,7 @@ $(document).on('click', '#movies-filter', (event) => {
              <div class="card" >
               <img class="imagen-mivies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                <div class="card-content">
-                <span class="card-title activator grey-text text-darken-2"><p>${gen[i].title}</p></span>
+                <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${gen[i].title}</p></span>
               </div>
              </div>  
             </div> 
@@ -325,35 +325,14 @@ $(document).on('click', '#movies-filter', (event) => {
        });
 
   })
-  let number = document.getElementsByClassName("number");
-  console.log(number)
-     function nextPages () {
-       let gender= document.getElementById("select-gender-category").value;
-       //console.log(document.getElementById("select-gender-category").value)
-         for (let i = 0; i<number.length; i++) {
-           number[i].addEventListener("click",() =>{
-             fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63bebab6723d0f&language=es-MX&with_genres=10751,14,"+gender+"&page="+number[i].value)
-             .then(data => data.json() )
-             .then(data => {
-               allData = data.results;
-               document.getElementById("content1").innerHTML="";
-               for (let i = 0; i <allData.length; i++){
-                 document.getElementById('content1').innerHTML +=
-                 `
-        <div class="col s6 m4">
-           <div  id="images" class="textOverImage card-image responsive-img" data-text="${allData[i].title}
-               ${allData[i].overview}">
-              <img class=" responsive-img" src="https://image.tmdb.org/t/p/w500${allData[i].poster_path}">
-           </div>
-        </div>
-      `
+  
 
-                }
-             })
-           })
+  document.getElementById('myInput').addEventListener("keydown", (e) => {
+         if(e.keyCode === 13){
+           alert("hola")
          }
-       }
-
+    })
+  
 
 
       

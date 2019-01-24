@@ -160,3 +160,10 @@ img#logo{
     margin-top:15px;
     margin-left: 20px;
 }
+.tittle-movies{
+    font-size: 16px;
+    color: #312f2f;  
+}
+.card .card-content{
+    padding:5px;
+}
