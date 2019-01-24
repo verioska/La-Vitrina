@@ -39,19 +39,7 @@ fetch("http://www.omdbapi.com/?t=bird+box&plot=full&apikey=7f7da682")
   document.getElementById("popular").innerHTML += `
            <img class="responsive-img" id="movie" style="cursor: pointer;" movie="${data.id}" src="${data.Poster}">`
 });
-$(document).on('click', '#movie', (event) => {
-  event.preventDefault();
-  document.getElementById('page1').style.display='none';
-  document.getElementById('page2').style.display='none';
-  document.getElementById('page3').style.display='none';
-  document.getElementById('page6').style.display='block';
-  const id = event.target.attributes[1].value;
-  fetch("https://api.themoviedb.org/3/movie/" + id + "?api_key=48819a4f88e3d597df63bebab6723d0f")
-  .then(data=>data.json())
-  .then(data=>{
-    console.log(data, 'este es el detalle de la peli');
-  });
-})
+
 
 
 fetch("http://www.omdbapi.com/?t=aquaman&plot=full&apikey=7f7da682")
@@ -98,7 +86,7 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
             <div class="container">
               <div id="card-movie" class="col s12 m3" >
               <div class="card" >
-               <img class="imagen-mivies responsive-img" style="cursor: pointer;" movie="${characters[i].id}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+               <img class="imagen-mivies responsive-img"  movie="${characters[i].title}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                 <div class="card-content">
                  <span class="card-title activator grey-text text-darken-2"><p>${characters[i].title}</p></span>
                </div>
@@ -116,18 +104,32 @@ document.getElementById('page3').style.display='block';
 });  
 }); 
 
+//dandole click a la pantalla 2
+
 $(document).on('click', '#card-movie', (event) => {
   event.preventDefault();
   document.getElementById('page1').style.display='none';
   document.getElementById('page2').style.display='none';
   document.getElementById('page3').style.display='none';
   document.getElementById('page6').style.display='block';
-  const id = event.target.attributes[1].value;
-  fetch("https://api.themoviedb.org/3/movie/" + id + "?api_key=48819a4f88e3d597df63bebab6723d0f")
+  const title = event.target.attributes[1].value;
+  fetch("http://www.omdbapi.com/?t="+title+"&plot=full&apikey=7f7da682")
   .then(data=>data.json())
   .then(data=>{
+    
     console.log(data, 'este es el detalle de la peli');
+    console.log(data.title)
+    document.getElementById("infopage6").innerHTML =  `
+    <p> Título: ${ data.Title}</p>
+    <p> Duración: ${ data.Runtime}</p>
+    <p> Director: ${ data.Director}</p>
+    <p> Género: ${ data.Genre}</p>
+    <p> Actores: ${ data.Actors}</p>
+    `
+
+
   });
+
 })
 
 
@@ -149,24 +151,24 @@ document.getElementById("filter").addEventListener("change", (event)=>{
   event.preventDefault();
   document.getElementById("page3").style.display="none";
   document.getElementById('page6').style.display='none';
-  document.getElementById('page5').style.display='none';
+  document.getElementById('page5').style.display='block';
   
-  document.getElementById("movies-filter").innerHTML="";
+  document.getElementById("filter-year").innerHTML="";
   let genero = document.getElementById("filter").value;
   console.log(genero)
- 
-  fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63bebab6723d0f&page=1&primary_release_year=2019&with_genres="+genero)
+  let year= document.getElementById("filter_year").value;
+  fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63bebab6723d0f&page=1&primary_release_year="+year+"&with_genres="+genero)
   .then(data=>data.json())
   .then(data=>{
     let gen= data.results
-   
+    
     
     for (let i = 0; i <gen.length; i++){
-          document.getElementById("movies-filter").innerHTML += `
+          document.getElementById("filter-year").innerHTML += `
           <div class="container">
-          <div id="mivies-filter" class="col s12 m3" >
+          <div id="movies-filter" class="col s12 m3" >
           <div class="card" >
-           <img class="imagen-mivies responsive-img" style="cursor: pointer;" " src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+           <img class="imagen-mivies responsive-img" style="cursor: pointer;" movie="${gen[i].id}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
             <div class="card-content">
              <span class="card-title activator grey-text text-darken-2"><p>${gen[i].title}</p></span>
            </div>
@@ -181,17 +183,19 @@ document.getElementById("filter").addEventListener("change", (event)=>{
  
   })
 
+
   //Select de filtar por año page 5
   document.getElementById("filter_year").addEventListener("change", (event)=>{
     event.preventDefault();
     document.getElementById("page3").style.display="none";
     document.getElementById('page6').style.display='none';
-
+    document.getElementById("filter-year").style.display='block';
+    
      document.getElementById("filter-year").innerHTML="";
      let year= document.getElementById("filter_year").value;
      console.log(year)
-    
-     fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63bebab6723d0f&page=1&primary_release_year="+year)
+     let genero = document.getElementById("filter").value;
+     fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63bebab6723d0f&page=1&primary_release_year="+year+"&with_genres="+genero)
      .then(data=>data.json())
      .then(data=>{
        let gen= data.results
@@ -199,13 +203,19 @@ document.getElementById("filter").addEventListener("change", (event)=>{
    
        for (let i = 0; i <gen.length; i++){
              document.getElementById("filter-year").innerHTML += `
+             
+
              <div class="container">
-              
-                <div id="movies-filter" class="col s6 m4">
-                  <img class=" year responsive-img" src=https://image.tmdb.org/t/p/w500/${gen[i].poster_path}>
-                </div>
-               </div>
-             </div>
+             <div id="movies-filter" class="col s12 m3" >
+             <div class="card" >
+              <img class="imagen-mivies responsive-img" style="cursor: pointer;" movie="${gen[i].id}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+               <div class="card-content">
+                <span class="card-title activator grey-text text-darken-2"><p>${gen[i].title}</p></span>
+              </div>
+             </div>  
+            </div> 
+          </div>
+       </div> 
     
          `
        }
