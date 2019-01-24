@@ -194,7 +194,7 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
             <div class="container">
               <div id="card-movie" class="col s6 m3" >
               <div class="card" >
-               <img class="imagen-mivies responsive-img"  movie="${characters[i].title}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+               <img class="imagen-movies responsive-img"  movie="${characters[i].title}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                 <div class="card-content">
                  <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${characters[i].title}</p></span>
                </div>
@@ -289,7 +289,7 @@ document.getElementById("filter").addEventListener("change", (event)=>{
           <div class="container">
           <div id="movies-filter" class="col s6 m3" >
           <div class="card" >
-           <img class="imagen-mivies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+           <img class="imagen-movies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
             <div class="card-content">
              <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${gen[i].title}</p></span>
            </div>
@@ -363,7 +363,7 @@ $(document).on('click', '#movies-filter', (event) => {
              <div class="container">
              <div id="movies-filter" class="col s6 m3" >
              <div class="card" >
-              <img class="imagen-mivies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+              <img class="imagen-movies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                <div class="card-content">
                 <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${gen[i].title}</p></span>
               </div>
@@ -397,7 +397,7 @@ $(document).on('click', '#movies-filter', (event) => {
        <div class="container">
          <div id="card-movie" class="col s12 m12">
            <div class="card" id="card-search" >
-              <img class="imagen-mivies responsive-img" id="image-search"  src="${data.Poster}" >
+              <img class="imagen-movies responsive-img" id="image-search"  src="${data.Poster}" >
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-2"><p class="tittle-search">${data.Title}</p></span>
               </div>
@@ -462,7 +462,7 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
             <div class="container">
               <div id="card-movie" class="col s6 m3" >
               <div class="card" >
-               <img class="imagen-mivies responsive-img"  movie="${characters[i].title}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+               <img class="imagen-movies responsive-img"  movie="${characters[i].title}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                 <div class="card-content">
                  <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${characters[i].title}</p></span>
                </div>
@@ -543,7 +543,7 @@ document.getElementById("filter").addEventListener("change", (event)=>{
             <div class="container">
             <div id="movies-filter" class="col s6 m3" >
             <div class="card" >
-             <img class="imagen-mivies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+             <img class="imagen-movies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
               <div class="card-content">
                <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${gen[i].title}</p></span>
              </div>
@@ -617,7 +617,7 @@ document.getElementById("filter").addEventListener("change", (event)=>{
                <div class="container">
                <div id="movies-filter" class="col s6 m3" >
                <div class="card" >
-                <img class="imagen-mivies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
+                <img class="imagen-movies responsive-img"  movie="${gen[i].title}" src="https://image.tmdb.org/t/p/w500${gen[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                  <div class="card-content">
                   <span class="card-title activator grey-text text-darken-2"><p class="tittle-movies">${gen[i].title}</p></span>
                 </div>
