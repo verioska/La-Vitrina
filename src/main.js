@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 window.onload =() =>{
-    
+    let movies = null;
 //     function showCards(data) {
 
 //         document.getElementById('root').innerHTML = ''; 
@@ -37,8 +37,23 @@ fetch("http://www.omdbapi.com/?t=bird+box&plot=full&apikey=7f7da682")
 .then(data=>data.json())
 .then(data=>{
   document.getElementById("popular").innerHTML += `
-           <img class="responsive-img" src="${data.Poster}">`
+           <img class="responsive-img" id="movie" style="cursor: pointer;" movie="${data.id}" src="${data.Poster}">`
 });
+$(document).on('click', '#movie', (event) => {
+  event.preventDefault();
+  document.getElementById('page1').style.display='none';
+  document.getElementById('page2').style.display='none';
+  document.getElementById('page3').style.display='none';
+  document.getElementById('page6').style.display='block';
+  const id = event.target.attributes[1].value;
+  fetch("https://api.themoviedb.org/3/movie/" + id + "?api_key=48819a4f88e3d597df63bebab6723d0f")
+  .then(data=>data.json())
+  .then(data=>{
+    console.log(data, 'este es el detalle de la peli');
+  });
+})
+
+
 fetch("http://www.omdbapi.com/?t=aquaman&plot=full&apikey=7f7da682")
 .then(data=>data.json())
 .then(data=>{
@@ -69,22 +84,25 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
     .then(data=>data.json())
     .then(data=>{
       let characters= data.results;
- 
+      console.log('data buena', data);
       for (let i = 0; i <characters.length; i++){
         let title= characters[i].title
-         fetch ("http://www.omdbapi.com/?t="+title+"&page=1&apikey=7f7da682&y=2019")
-           .then (data=>data.json())
-           .then (data =>{
-          
-            document.getElementById('movies-list').innerHTML +=  `
+        //  fetch ("http://www.omdbapi.com/?t="+title+"&page=1&apikey=7f7da682&y=2019")
+        //    .then (res=>res.json())
+        //    .then (res =>{
+        //      console.log('data mala', res);
+        //      movies = res;
+            
+        //   })
+        document.getElementById('movies-list').innerHTML +=  `
             <div class="container">
         
-           <div id="history" class="col s12 m3" >
-           <div class="card">
-             <img class="imagen-mivies responsive-img" src="${data.Poster}" >
+           <div id="card-movie" class="col s12 m3" >
+           <div class="card" >
+             <img class="imagen-mivies responsive-img" style="cursor: pointer;" movie="${characters[i].id}" src="https://image.tmdb.org/t/p/w500${characters[i].poster_path}?api_key=48819a4f88e3d597df63bebab6723d0f" >
                <div class="card-content">
-                 <span class="card-title activator grey-text text-darken-2"><h6>${data.Title}</h6></span>
-                 <span class="link linkinfo" data-champion=''>Informacion</span>
+                 <span class="card-title activator grey-text text-darken-2"><p>${characters[i].title}</p></span>
+                 
                  </div>
                </div>  
              </div> 
@@ -92,15 +110,31 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=48819a4f88e3d597df63b
            </div>
         </div>
             `
-          })
           
         }
+
+        
 
 document.getElementById('page1').style.display='none';
 document.getElementById('page2').style.display='block';
 document.getElementById('page3').style.display='block';
 });  
-});  
+}); 
+
+$(document).on('click', '#card-movie', (event) => {
+  event.preventDefault();
+  document.getElementById('page1').style.display='none';
+  document.getElementById('page2').style.display='none';
+  document.getElementById('page3').style.display='none';
+  document.getElementById('page6').style.display='block';
+  const id = event.target.attributes[1].value;
+  fetch("https://api.themoviedb.org/3/movie/" + id + "?api_key=48819a4f88e3d597df63bebab6723d0f")
+  .then(data=>data.json())
+  .then(data=>{
+    console.log(data, 'este es el detalle de la peli');
+  });
+})
+
 
 //Pagina 1
   document.getElementById("start").addEventListener("click",
@@ -111,6 +145,7 @@ document.getElementById('page3').style.display='block';
   document.getElementById("page4").style.display="none";
   document.getElementById("page3").style.display="none";
   document.getElementById("page5").style.display="none";
+  document.getElementById('page6').style.display='none';
  
 });
 
@@ -118,7 +153,7 @@ document.getElementById('page3').style.display='block';
 document.getElementById("filter").addEventListener("change", (event)=>{
   event.preventDefault();
   document.getElementById("page3").style.display="none";
-  document.getElementById("page2").style.display="block";
+  document.getElementById('page6').style.display='none';
   
   document.getElementById("movies-filter").innerHTML="";
   let genero = document.getElementById("filter").value;
@@ -129,7 +164,7 @@ document.getElementById("filter").addEventListener("change", (event)=>{
   .then(data=>{
     let gen= data.results
    
-
+    
     for (let i = 0; i <gen.length; i++){
           document.getElementById("movies-filter").innerHTML += `
           <div class="container">
@@ -150,6 +185,7 @@ document.getElementById("filter").addEventListener("change", (event)=>{
   document.getElementById("filter_year").addEventListener("change", (event)=>{
     event.preventDefault();
     document.getElementById("page3").style.display="none";
+    document.getElementById('page6').style.display='none';
 
      document.getElementById("filter-year").innerHTML="";
      let year= document.getElementById("filter_year").value;

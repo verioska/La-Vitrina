@@ -4,32 +4,25 @@ body{
     background-color:#e0e0e0;
     font-family: 'Titillium Web', sans-serif;
 }
-
 .nav-wrapper{
     background-color:#212121;
 }
-
 .nav-wrapper a{
     font-size: 18px;
     margin-right: 20px;
 }
-
-
 .page-footer{
     background-color:#212121;
     margin-top: 90px;
     height: 70px;
     width: 100%;
-    position: static;
-    
+    position: static;    
 }
-
 #top-movies{
     font-size: 20px;
     text-align: left;
     margin-left: 40px;
 }
-
 input#myInput{
     width: 20%;
     height: 40px;
@@ -39,31 +32,17 @@ input#myInput{
     margin-right: 20px;
     text-align: center;
 }
-
-#page2,#page3{
+#page2,#page3,#page6{
     display:none
 }
-
 #instagram-icon, #facebook-icon, #wsp-icon{
     width: 45px;
-    height: 45px;
-   
-    
+    height: 45px;    
 }
 .popular {
     width: 175px;
     height: 300px;
 }
-/*img.imagen-movies.responsive-img{
-    width: 200px;
-    height: 230px;
-
-}
-div.card{
-    width: 200px;
-    height: 330px;
-}*/
-
 div#icons-media{
     margin-left: auto;
     margin-right: auto;
@@ -74,13 +53,11 @@ div#icons-media{
     color: cadetblue;
     cursor: pointer;
 }
-
 img.responsive-img, img{
     width: 220px;
     height: 300px;
     padding: 4px;
 }
-
 h5{
    font-family:  'Titillium Web', sans-serif;
 }
